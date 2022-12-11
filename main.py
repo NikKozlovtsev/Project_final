@@ -1,4 +1,5 @@
 #libraries
+import streamlit as st
 import pandas as pd
 import plotly.express as px
 
@@ -8,22 +9,22 @@ data.dropna()
 data.describe().loc[['mean', '50%', 'std']]
 
 chart1 = px.histogram(data, x="AGE")
-chart1.show()
+st.plotly_chart(chart1)
 
 fig = px.pie(data, values='SMOKING', names='GENDER')
-fig.show()
+st.plotly_chart(fig)
 
 fig = px.bar(data, x='LUNG_CANCER')
-fig.show()
+st.plotly_chart(fig)
 
 fig = px.histogram(data, x="AGE",y='SMOKING', color="GENDER")
-fig.show()
+st.plotly_chart(fig)
 
 fig = px.density_heatmap(data, x="AGE", y="LUNG_CANCER", facet_row="SMOKING", facet_col="GENDER")
-fig.show()
+st.plotly_chart(fig)
 
 data = data.assign(lung_cancer__of_each_gender = data.GENDER + data.LUNG_CANCER)
 # merging graphs
 
 fig = px.bar(data, x='lung_cancer__of_each_gender',)
-fig.show()
+st.plotly_chart(fig)
