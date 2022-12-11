@@ -28,10 +28,13 @@ st.subheader("The presence of lung cancer in respondents")
 fig = px.bar(data, x='LUNG_CANCER')
 st.plotly_chart(fig)
 st.write("The statistics show us that over 80% of respondets have lung cancer that means that these problem is not rare one and understanding of the factors that lead to lung cancer will help people to prevent this disease.")
-
-
+st.header("Analyzing the data")
+st.subheader("Who smokes more?")
 fig = px.histogram(data, x="AGE",y='SMOKING', color="GENDER")
 st.plotly_chart(fig)
+st.write("One can see that women smoke  much more often than men. This will help us to proove or refute the fact of
+having better nicotine resistance between the sexes.")
+st.subheader("The presence of lung cancer in respondents")
 
 fig = px.density_heatmap(data, x="AGE", y="LUNG_CANCER", facet_row="SMOKING", facet_col="GENDER")
 st.plotly_chart(fig)
