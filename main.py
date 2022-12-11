@@ -10,15 +10,16 @@ st.write('Show the relationship between the presence of lung cancer in people an
 st.write('Find is there a difference in the incidence of cancer in men and women when exposed to smoking.')
 st.subheader('Hypothesis')
 st.write('Men and women have the same resistance to nicotine and suffer from lung cancer approximately equally.')
-
+st.subheader('Dataset and its midean, mean and std')
 data =pd.read_csv("survey_lung_cancer.csv")
 data.dropna()
 
 data.describe().loc[['mean', '50%', 'std']]
+st.subheader("The all ages of respondents")
 
 chart1 = px.histogram(data, x="AGE")
 st.plotly_chart(chart1)
-
+st.write("This statistics show that the overwhelming majority  that took part in this survey were in the range of 40 to 80 years. So, our research will give information about elderly people.")
 fig = px.pie(data, values='SMOKING', names='GENDER')
 st.plotly_chart(fig)
 
