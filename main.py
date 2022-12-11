@@ -4,6 +4,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 st.header("Lung Cancer and Smoking")
+st.write('Nowadays, a large number of people smoke cigarettes and tobacco in its various forms.It hearts their health and leads to a lot of diseases such as lung cancer and others.')
 data =pd.read_csv("survey_lung_cancer.csv")
 data.dropna()
 
