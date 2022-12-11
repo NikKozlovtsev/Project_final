@@ -6,8 +6,8 @@ import plotly.express as px
 st.header("Lung Cancer and Smoking")
 st.write('Nowadays, a large number of people smoke cigarettes and tobacco in its various forms.It hearts their health and leads to a lot of diseases such as lung cancer and others.')
 st.header('The purpose of the projec')
-st.write('1. Show the relationship between the presence of lung cancer in people and their habit of smoking
-2. Find is there a difference in the incidence of cancer in men and women when exposed to smoking')
+st.write('Show the relationship between the presence of lung cancer in people and their habit of smoking')
+st.write('Find is there a difference in the incidence of cancer in men and women when exposed to smoking')
 data =pd.read_csv("survey_lung_cancer.csv")
 data.dropna()
 
