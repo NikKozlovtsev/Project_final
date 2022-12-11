@@ -20,9 +20,10 @@ st.subheader("The all ages of respondents")
 chart1 = px.histogram(data, x="AGE")
 st.plotly_chart(chart1)
 st.write("This statistics show that the overwhelming majority  that took part in this survey were in the range of 40 to 80 years. So, our research will give information about elderly people.")
+st.subheader("GENDER and Smoking")
 fig = px.pie(data, values='SMOKING', names='GENDER')
 st.plotly_chart(fig)
-
+st.write("It can be seen that differnce between male and female respondents is pretty equel to each other, which means that the data obtained during our project will be more reliable.")
 fig = px.bar(data, x='LUNG_CANCER')
 st.plotly_chart(fig)
 
