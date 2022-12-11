@@ -1,9 +1,9 @@
-st.header("Lung Cancer and Smoking")
+
 #libraries
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-
+st.header("Lung Cancer and Smoking")
 data =pd.read_csv("survey_lung_cancer.csv")
 data.dropna()
 
