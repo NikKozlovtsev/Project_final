@@ -34,16 +34,21 @@ st.subheader("Who smokes more?")
 
 fig = px.histogram(data, x="AGE",y='SMOKING', color="GENDER")
 st.plotly_chart(fig)
-st.write("The comparative graph shows that the dependence on smoking and the presence of cancer in the sexes is practically absent. The slight difference is most likely due to the frequency of smoking, which is less in females.If you rely only on this graph, then men (does not matter smokers or non-smokers) suffer from lung cancer more often than women. Which brings us to the conclusion that women are more resistant to nicotine.In addition, women smoke much more often than men and suffer from lung cancer less, which once again confirms that they have better resistance to such a poison as nicotine and levels out the fact of the percentage of men and women.")
+
 st.write("One can see that women smoke  much more often than men. This will help us to proove or refute the fact of having better nicotine resistance between the sexes.")
 st.subheader("Presenting and comparing")
 
 fig = px.density_heatmap(data, x="AGE", y="LUNG_CANCER", facet_row="SMOKING", facet_col="GENDER")
 st.plotly_chart(fig)
-
+st.write("The comparative graph shows that the dependence on smoking and the presence of cancer in the sexes is practically absent. The slight difference is most likely due to the frequency of smoking, which is less in females.If you rely only on this graph, then men (does not matter smokers or non-smokers) suffer from lung cancer more often than women. Which brings us to the conclusion that women are more resistant to nicotine.In addition, women smoke much more often than men and suffer from lung cancer less, which once again confirms that they have better resistance to such a poison as nicotine and levels out the fact of the percentage of men and women.")
 
 data = data.assign(lung_cancer__of_each_gender = data.GENDER + data.LUNG_CANCER)
 # merging graphs
-
+st.subheader("Own Graph")
 fig = px.bar(data, x='lung_cancer__of_each_gender',)
 st.plotly_chart(fig)
+st.write("Before the conclusion, for clarity, I present a table in which it is jointly shown that men suffer from lung cancer more than women")
+st.write("Notation: MYES - Male who suffer from lung cancer")
+st.write("          FNO - Female who not suffer from lung cancer")
+st.write("          MNO - Male who not suffer from lung cancer")
+st.write("          FYES - Female who suffer from lung cancer")
