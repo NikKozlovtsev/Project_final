@@ -18,6 +18,7 @@ data.describe().loc[['mean', '50%', 'std']]
 st.subheader("The all ages of respondents")
 
 chart1 = px.histogram(data, x="AGE")
+
 st.plotly_chart(chart1)
 st.write("This statistics show that the overwhelming majority  that took part in this survey were in the range of 40 to 80 years. So, our research will give information about elderly people.")
 st.subheader("GENDERS of respondents")
@@ -30,13 +31,16 @@ st.plotly_chart(fig)
 st.write("The statistics show us that over 80% of respondets have lung cancer that means that these problem is not rare one and understanding of the factors that lead to lung cancer will help people to prevent this disease.")
 st.header("Analyzing the data")
 st.subheader("Who smokes more?")
+
 fig = px.histogram(data, x="AGE",y='SMOKING', color="GENDER")
 st.plotly_chart(fig)
+st.write("The comparative graph shows that the dependence on smoking and the presence of cancer in the sexes is practically absent. The slight difference is most likely due to the frequency of smoking, which is less in females.If you rely only on this graph, then men (does not matter smokers or non-smokers) suffer from lung cancer more often than women. Which brings us to the conclusion that women are more resistant to nicotine.In addition, women smoke much more often than men and suffer from lung cancer less, which once again confirms that they have better resistance to such a poison as nicotine and levels out the fact of the percentage of men and women.")
 st.write("One can see that women smoke  much more often than men. This will help us to proove or refute the fact of having better nicotine resistance between the sexes.")
-st.subheader("The presence of lung cancer in respondents")
+st.subheader("Presenting and comparing")
 
 fig = px.density_heatmap(data, x="AGE", y="LUNG_CANCER", facet_row="SMOKING", facet_col="GENDER")
 st.plotly_chart(fig)
+
 
 data = data.assign(lung_cancer__of_each_gender = data.GENDER + data.LUNG_CANCER)
 # merging graphs
